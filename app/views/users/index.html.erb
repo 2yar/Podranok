@@ -1,0 +1,27 @@
+<h1>Страница пользователей</h1>
+  <% if notice %>
+  <p id="notice"><%= notice %></p>
+  <% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Nickmame</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.nickname %></td>
+      <td><%= link_to 'Show', user %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
