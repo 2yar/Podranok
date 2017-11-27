@@ -9,18 +9,19 @@
       <th>FirstName</th>
       <th>LastName</th>
       <th>Email</th>
-      <th>Nickmame</th>
+      <th>Nickname</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% @user.each do |user| %>
     <tr>
       <td><%= user.first_name %></td>
       <td><%= user.last_name %></td>
       <td><%= user.email %></td>
       <td><%= user.nickname %></td>
-      <td><%= link_to 'Show', user %></td>
+      <td><%= link_to 'Show', user_path(@user) %></td>
+      <td><%= link_to 'Destroy', user, method: :destroy %></td>
     </tr>
     <% end %>
   </tbody>

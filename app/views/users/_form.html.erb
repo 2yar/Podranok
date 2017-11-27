@@ -1,0 +1,36 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %>
+        prohibited this user from being saved: </h2>
+      </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Enter User Details</legend>
+
+    <div class="field">
+      <%= f.label :first_name, "First name:" %>
+      <%= f.text_field :first_name, size: 40 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name, "Last name:" %>
+      <%= f.text_field :last_name, size: 40 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email, size: 40 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nickname, "Nickname:" %>
+      <%= f.text_field :nickname, size: 40 %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
