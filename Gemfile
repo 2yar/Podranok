@@ -33,8 +33,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'paperclip'
 gem 'devise'
+gem 'paperclip'
 gem 'toastr-rails'
 
 group :development, :test do
@@ -43,9 +43,9 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
-  gem 'web-console', '>= 3.3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'web-console', '>= 3.3.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
