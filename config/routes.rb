@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users
-  resources :products
+  root to: "products#index"
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations:'users/regestrations',
+  }
+  resources :users, :products
 end
