@@ -127,6 +127,7 @@ GEM
     parallel (1.12.0)
     parser (2.4.0.2)
       ast (~> 2.3)
+    pg (0.21.0)
     powerpack (0.1.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -238,6 +239,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   paperclip
+  pg
   puma (~> 3.0)
   rails (~> 5.0.6)
   rubocop (~> 0.51.0)

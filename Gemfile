@@ -40,6 +40,10 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'rubocop', '~> 0.51.0', require: false
