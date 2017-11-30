@@ -1,0 +1,32 @@
+<h1>Страница пользователей</h1>
+  <% if notice %>
+  <p id="notice"><%= notice %></p>
+  <% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Nickname</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.each do |user| %>
+    <tr>
+      <td><%= user.first_name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.nickname %></td>
+      <td><%= link_to 'Show', user %></td>
+      <td><%= link_to 'Destroy', user, method: :delete %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Add_new_user', new_user_path %>
+<p></p>
+<%= link_to 'sign_out', destroy_user_session_path, method: :delete %>
