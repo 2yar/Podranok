@@ -30,12 +30,4 @@
   </tbody>
 </table>
 
-<br>
-
 <%= link_to 'Создать новый продукт', new_product_path %> 
-<p></p>
-<% if current_user.nil? %>
-  <%= link_to new_user_session_path, class: 'login-button' do %>Sign in<% end %>
-<% else %>
-  <%= link_to users_path, class: 'login-button' do %>Go to User<% end %>
-<% end %>
