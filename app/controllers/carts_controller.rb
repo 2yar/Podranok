@@ -1,13 +1,11 @@
 class CartsController < ApplicationController
-  def create
-    @cart = Cart.new
+  before_action :set_cart, only: [:show]
 
-    respond_to do |format|
-      if @cart.save
-        format.http { redirect_to @cart, notice: 'Line_item was successfully created' }
+  def create
+    if @cart.save
+      redirect_to @cart, notice: 'Line_item was successfully created'
       else
-        format.http { redirect_to products_path }
-      end
+      redirect_to products_path
     end
   end
 
@@ -19,5 +17,11 @@ class CartsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def set_cart
+    @cart = Cart.find(params[:id])    
   end
 end
