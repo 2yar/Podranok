@@ -15,6 +15,6 @@ class Product < ApplicationRecord
     else
       errors.add(:base, 'существуют товарные позиции')
       return false
-    end    
+    end
   end
 end
