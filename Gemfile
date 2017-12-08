@@ -40,12 +40,20 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'rubocop', '~> 0.51.0', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+  gem 'capistrano', '~> 3.7', '>= 3.7.1'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rvm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
