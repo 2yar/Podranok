@@ -19,6 +19,8 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+config/database.yml
+config/secrets.yml
 
 #Ignore image file
 public/system/products/images
