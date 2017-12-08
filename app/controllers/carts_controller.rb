@@ -1,8 +1,8 @@
 class CartsController < ApplicationController
-  before_action :set_cart, only: [:show]
+  before_action :params_cart, only: [:show]
   def create
     if @cart.save
-      redirect_to @cart, notice: 'Line_item was successfully created'
+      redirect_to @cart
     else
       redirect_to products_path
     end
@@ -18,7 +18,7 @@ class CartsController < ApplicationController
 
   private
 
-  def set_cart
+  def params_cart
     @cart = Cart.find(params[:id])
   end
 end
