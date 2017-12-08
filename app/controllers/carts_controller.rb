@@ -8,13 +8,7 @@ class CartsController < ApplicationController
     end
   end
 
-  def new
-    @cart = Cart.new
-  end
-
   def show; end
-
-  def destroy; end
 
   private
 
