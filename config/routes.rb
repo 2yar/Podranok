@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, :products
-  resources :carts, only: [:create, :show]
+  resources :carts, only: [:create, :show, :destroy]
   resources :line_items, only: [:create]
 end
