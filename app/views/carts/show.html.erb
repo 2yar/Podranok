@@ -4,4 +4,5 @@
   <% @cart.line_items.each do |item| %>
     <li><%= item.product.name %></li>
   <% end %>
-  </ul>
+</ul>
+<%= button_to "Checkout", new_order_path, method: :get %>   
