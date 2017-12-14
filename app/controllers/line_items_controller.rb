@@ -2,6 +2,10 @@ class LineItemsController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:create]
   
+  def new
+    @line_item = LineItem.new
+  end
+  
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)
@@ -9,7 +13,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         format.html { redirect_to @line_item.cart, notice: 'Item was successfully added to cart' }
       else
-        format.html { render action: 'new' }
+        format.html
       end
     end
   end
