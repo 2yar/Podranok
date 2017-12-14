@@ -9,8 +9,7 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/1
-  def show 
-  end
+  def show; end
 
   # GET /orders/new
   def new
@@ -22,8 +21,7 @@ class OrdersController < ApplicationController
   end
 
   # GET /orders/1/edit
-  def edit 
-  end
+  def edit; end
 
   # POST /orders
   def create
