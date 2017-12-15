@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.line_items.empty?
-      { redirect_to products_path, notice: "Ваша корзина пуста" } 
+      redirect_to products_path, notice: "Ваша корзина пуста" 
       return
     end 
     @order = Order.new
