@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   PAYMENT_TYPES = ["Наличными при получении товара на складе Новой Почты",
                    "Оплата за товар на карту ПриватБанка",
                    "WebMoney.UA"]
-  TYPE_Of_DELIVERY = ["Нова почта", "Автолюкс"]
+  TYPE_OF_DELIVERY = ["Нова почта", "Автолюкс"]
 
   has_many :line_items, dependent: :destroy
 
