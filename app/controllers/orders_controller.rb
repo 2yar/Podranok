@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     if @cart.line_items.empty?
-      redirect_to products_path, notice: "Ваша корзина пуста" 
+      redirect_to products_path, notice: 'Ваша корзина пуста' 
       return
     end 
     @order = Order.new
@@ -32,8 +32,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to products_path, notice:
-          'Спасибо за ваш заказ.' }
+        format.html { redirect_to products_path, notice: 'Спасибо за ваш заказ.' }
       else
         @cart = set_cart
         format.html { render action: 'new' }
@@ -61,13 +60,13 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order
+    @order = Order.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:name, :address, :email, :phone, :pay_type, :type_of_delivery)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:name, :address, :email, :phone, :pay_type, :type_of_delivery)
+  end
 end
