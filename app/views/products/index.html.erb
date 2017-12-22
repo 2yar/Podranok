@@ -26,7 +26,7 @@
         <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= image_tag  product.image.url(:medium) %></td>
         <td>
-<%= button_to 'Add to Cart', line_items_path(product_id: product) %></td>
+<%= button_to 'Add to Cart', line_items_path(product_id: product.id) %></td>
       </tr>
     <% end %>
   </tbody>
