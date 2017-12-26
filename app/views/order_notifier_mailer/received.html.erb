@@ -1,5 +1,23 @@
-<h1>OrderNotifier#received</h1>
+<p>Уважаемый(ая) <%= @order.name %></p>
+
+<p>Администрация магазина Podranok благодарит Вас за недавний заказ.</p>
+
+<p><b>Вы заказали следующий товар:</b></p>
 
 <p>
-  <%= @greeting %>, find me in app/views/order_notifier_mailer/received.html.erb
+  <%= render @order.line_items -%>
+</p>
+
+<p><b>В ближайшее время с Вами свяжется наш менеджер для уточнения деталей заказа, и подтверждения заказа.</b></p>
+
+<p><strong>Контактные данные:</strong></p>
+
+<p>
+  <strong>ФИО:</strong> 
+  <%= @order.name %>  
+</p>
+
+<p>
+  <strong>Номер телефона:</strong> 
+  <%= @order.phone %>  
 </p>

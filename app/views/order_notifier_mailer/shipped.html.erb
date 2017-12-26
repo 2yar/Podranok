@@ -1,9 +1,3 @@
-<h3>Заказ из Podranok Order отправлен</h3>
-<p>
-  Это сообщение уведомляет Вас, что мы отправили ваш недавний заказ:
-</p>
+OrderNotifier#shipped
 
-<table>
-  <tr><th colspan="2">К-во</th><th>Описание</th></tr>
-  <%= render @order.line_items -%>
-</table>
+<%= @greeting %>, find me in app/views/order_notifier_mailer/shipped.html.erb
