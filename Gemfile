@@ -32,10 +32,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'ancestry'
 gem 'devise'
 gem 'paperclip'
 gem 'toastr-rails'
+gem 'ancestry'
 
 group :development, :test do
   gem 'byebug', platform: :mri
