@@ -1,0 +1,27 @@
+<% if @category.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+    <ul>
+      <% @category.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @category do |f| %>
+  <div class="form_group">
+    <%= f.label 'Названия' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+   <div class="form_group">
+    <%= f.label 'Категория родитель' %>
+    <%= f.collection_select :parent_id, Category.where("id != #{@category.id}").order(:name), :id, :name, { include_blank: true },class: 'form-control' %>
+  </div>
+
+  <div class="form_group">
+    <%= f.submit t('.submit', action: @category.new_record? ? 'Создать' : 'Изменить') %>
+  </div>
+<% end %>

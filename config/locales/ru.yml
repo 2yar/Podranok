@@ -1,0 +1,8 @@
+ru:
+  categories:
+    new:
+      submit:
+        '%{action} категорию'
+    form:
+      submit:
+        '%{action} категорию'
