@@ -1,14 +1,3 @@
-Уважаемый(ая) <%= @order.name %>
+OrderNotifier#received
 
-Администрация магазина Podranok благодарит Вас за недавний заказ.
-
-Вы заказали следующий товар:
-<%= render @order.line_items -%>
-
-В ближайшее время с Вами свяжется наш менеджер для уточнения деталей заказа, и подтверждения заказа.
-
-Контактные данные:
-
-ФИО: <%= @order.name %>
-
-Номер телефона: <%= @order.phone %>
+<%= @greeting %>, find me in app/views/order_notifier_mailer/received.text.erb
