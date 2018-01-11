@@ -31,8 +31,7 @@
         <td><%= link_to 'Показать', product %></td>
         <td><%= link_to 'Изменить ', edit_product_path(product) %></td>
         <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-<%= button_to 'Add to Cart', line_items_path(product_id: product.id) %></td>
+        <td><%= button_to 'Add to Cart', line_items_path(product_id: product.id) %></td>
       </tr>
     <% end %>
   </tbody>

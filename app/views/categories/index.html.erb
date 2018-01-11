@@ -17,7 +17,7 @@
           <td>
             <%= link_to 'Показать', category %>
             <%= link_to 'Изменить', edit_category_path(category) %>
-            <%= link_to 'Удалить', category, method: :delete, data: { confirm: "Вы уверены?"}  %>
+            <%= link_to 'Удалить', category, method: :delete, data: { confirm: "Вы уверены?" }  %>
           </td>
         </tr>
       <% end %>
@@ -25,4 +25,4 @@
   </table> 
 </section>
 
-<%= link_to 'Новая категория', new_category_path%>
+<%= link_to 'Новая категория', new_category_path %>

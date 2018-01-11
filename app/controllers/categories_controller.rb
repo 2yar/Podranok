@@ -11,6 +11,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @parent_categories = Category.order(:name, :id)
   end
 
   def create
@@ -22,7 +23,9 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @parent_categories = Category.order(:name, :id)
+  end
 
   def update
     if 

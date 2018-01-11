@@ -4,7 +4,7 @@
 
     <ul>
       <% @category.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+        <li><%= message %></li>
       <% end %>
     </ul>
   </div>
@@ -18,7 +18,7 @@
 
    <div class="form_group">
     <%= f.label 'Категория родитель' %>
-    <%= f.collection_select :parent_id, Category.where("id != #{@category.id}").order(:name), :id, :name, { include_blank: true },class: 'form-control' %>
+    <%= f.collection_select :parent_id, @parent_categories, :id, :name, { include_blank: true } %>
   </div>
 
   <div class="form_group">
