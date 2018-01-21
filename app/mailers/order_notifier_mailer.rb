@@ -17,6 +17,6 @@ class OrderNotifierMailer < ApplicationMailer
   #
   def shipped
     @greeting = "Hi"
-    mail to: "to@example.org"
+    mail to: "podranok@gmail.com>"
   end
 end
