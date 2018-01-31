@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'paperclip'
 gem 'toastr-rails'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

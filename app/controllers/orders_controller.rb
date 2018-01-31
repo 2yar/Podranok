@@ -32,6 +32,8 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
+        session[:order_id] = @order.id
+        OrderNotifierMailer.received(@order).deliver_later
         format.html { redirect_to products_path, notice: 'Спасибо за ваш заказ.' }
       else
         @cart = set_cart
