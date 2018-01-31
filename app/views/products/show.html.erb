@@ -25,7 +25,7 @@
   <%= image_tag @product.image.url(:medium) %>
 </p>
 <p>
-  <strong>katalog:</strong>
+  <strong>Catalog:</strong>
   <% if @product.category.present? %>
    <%= link_to @product.category.name, @product.category %>
   <% end %>
