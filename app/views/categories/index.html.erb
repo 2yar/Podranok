@@ -16,8 +16,10 @@
           <td><%= category.parent.name if category.parent.present? %></td>
           <td>
             <%= link_to 'Показать', category %>
-            <%= link_to 'Изменить', edit_category_path(category) %>
-            <%= link_to 'Удалить', category, method: :delete, data: { confirm: "Вы уверены?" }  %>
+            <% if user_signed_in? && current_user.admin? %>
+              <%= link_to 'Изменить', edit_category_path(category) %>
+              <%= link_to 'Удалить', category, method: :delete, data: { confirm: "Вы уверены?" }  %>
+            <% end %>
           </td>
         </tr>
       <% end %>
@@ -25,4 +27,8 @@
   </table> 
 </section>
 
-<%= link_to 'Новая категория', new_category_path %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Новая категория', new_category_path %>
+<% end %>
+
+

@@ -35,13 +35,15 @@
           <% end %>
         </td>
         <td><%= link_to 'Показать', product %></td>
-        <td><%= link_to 'Изменить ', edit_product_path(product) %></td>
-        <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-<%= button_to 'Add to Cart', line_items_path(product_id: product.id) %></td>
+        <% if user_signed_in? && current_user.admin? %>
+          <td><%= link_to 'Изменить ', edit_product_path(product) %></td>
+          <td><%= link_to 'Удалить', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        <td><%= button_to 'Add to Cart', line_items_path(product_id: product.id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to 'Создать новый продукт', new_product_path %> 
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'Создать новый продукт', new_product_path %> 
+<% end %>
