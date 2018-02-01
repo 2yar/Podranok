@@ -24,6 +24,18 @@
   <strong>Image:</strong>
   <%= image_tag @product.image.url(:medium) %>
 </p>
+<p>
+  <strong>Catalog:</strong>
+  <% if @product.category.present? %>
+   <%= link_to @product.category.name, @product.category %>
+  <% end %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <% if @product.category.parent.present? %>
+   <%= link_to @product.category.parent.name, @product.category.parent %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

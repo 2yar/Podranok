@@ -36,6 +36,11 @@
     <%= f.file_field :image %>
   </div>
 
+  <div class="field">
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id, @сategory, :id, :name, { include_blank: true } %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
