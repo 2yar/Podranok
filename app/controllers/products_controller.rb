@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   # GET /products
@@ -54,6 +55,10 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def check_admin
+    redirect_to root_path unless current_user.admin?
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_product

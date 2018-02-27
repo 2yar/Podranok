@@ -37,6 +37,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'toastr-rails'
 gem 'dotenv-rails'
+gem 'rails_admin', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
