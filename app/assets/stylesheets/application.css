@@ -13,6 +13,4 @@
  *= require_tree .
  *= require_self
  *= require toastr
- *= require font-awesome
- *= require bootstrap_and_overrides
  */
