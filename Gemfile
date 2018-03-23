@@ -38,6 +38,12 @@ gem 'paperclip'
 gem 'toastr-rails'
 gem 'dotenv-rails'
 gem 'rails_admin', '~> 1.2'
+gem "therubyracer"
+gem 'less-rails', '~> 2.7.0'
+gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
+gem 'glyphicons-rails', '~> 0.1.2'
+gem 'sprockets', '~> 3.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri
