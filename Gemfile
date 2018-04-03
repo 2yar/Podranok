@@ -44,6 +44,7 @@ gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'glyphicons-rails'
 gem 'sprockets', '~> 3.7'
+gem 'slim', '~> 3.0', '>= 3.0.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri
