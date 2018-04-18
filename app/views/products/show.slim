@@ -1,0 +1,35 @@
+p id="notice"
+  = notice 
+
+p 
+  strong Name:
+  = @product.name
+
+p
+  strong Description:
+  = @product.description
+
+p
+  strong Price:
+  = @product.price
+
+p
+  strong Weight:
+  = @product.weight
+
+p
+  strong Image:
+  = image_tag @product.image.url(:medium)
+
+p
+  strong Catalog:
+  - if @product.category.present? 
+    = link_to @product.category.name, @product.category 
+
+p
+  strong Category:
+  - if @product.category.parent.present? 
+    = link_to @product.category.parent.name, @product.category.parent
+
+= link_to 'Edit', edit_product_path(@product)
+= link_to 'Back', products_path 

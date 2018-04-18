@@ -1,0 +1,10 @@
+body
+  - @products.each do |product|
+    div class="col-lg-3"
+      nav id="productsindex"
+        h6.name = product.name
+        img.image_tag = image_tag product.image.url(:medium)
+        h6.price = product.price
+        = link_to 'Show', product, :class=>"btn btn-outline-secondary"
+        = button_to 'Add', line_items_path(product_id: product.id), :class=>"btn btn-outline-secondary" 
+

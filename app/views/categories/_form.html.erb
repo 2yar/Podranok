@@ -1,7 +1,6 @@
 <% if @category.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
     <ul>
       <% @category.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -19,6 +18,11 @@
    <div class="form_group">
     <%= f.label 'Категория родитель' %>
     <%= f.collection_select :parent_id, @parent_categories, :id, :name, { include_blank: true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="form_group">
