@@ -1,0 +1,24 @@
+section id="categories"
+  table
+    thead
+      tr
+        th #
+        th Названия
+        th Категория Родитель
+        th 
+
+    tbody
+      - @categories.each_with_index do |category, index| 
+        tr
+          td = index + 1 
+          td = category.name
+          td = category.parent.name if category.parent.present?
+          td = image_tag  category.image.url(:medium)
+          td
+            = link_to 'Показать', category
+            - if user_signed_in? && current_user.admin?
+              = link_to 'Изменить', edit_category_path(category)
+              = link_to 'Удалить', category, method: :delete, data: { confirm: "Вы уверены?" }
+
+- if user_signed_in? && current_user.admin? 
+  = link_to 'Новая категория', new_category_path 
