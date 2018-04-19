@@ -1,0 +1,23 @@
+button data-toggle="modal" data-target="#exampleModal"Открыть корзыну
+
+button  data-toggle="modal" data-target="#exampleModal"
+  = link_to "Вернуться к покупкам", products_path 
+
+div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  div class="modal-dialog" role="document"
+    div class="modal-content"
+      div class="modal-header"
+        h5 class="modal-title" id="exampleModalLabel" Моя корзина
+      div class="modal-body"
+        table
+          - @cart.line_items.each do |item|
+            tr
+              td = item.quantity
+              td = item.product.name 
+              td class="item_price" = number_to_currency(item.total_price)
+          tr class="total_line"
+            td colspan="2" Total
+            td class="total_cell" = number_to_currency(@cart.total_price)
+      div class="modal-footer"       
+        = button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }
+        = button_to 'Оформить заказ', new_order_path, method: :get

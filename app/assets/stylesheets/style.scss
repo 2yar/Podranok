@@ -30,7 +30,6 @@ body{
   margin-right: 25px;
 }
 
-
 #productsindex {
   border: 0.5px solid #AAAEB4;
   text-align: center;
@@ -42,4 +41,12 @@ body{
   border: 0.5px solid #AAAEB4;
   text-align: center;
   margin: 5px;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50px;
+  left: 400px;
+  width: 600px;
+  padding: 10px;
 }
