@@ -19,5 +19,5 @@ div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labell
             td colspan="2" Total
             td class="total_cell" = number_to_currency(@cart.total_price)
       div class="modal-footer"       
-        = button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' }
+        = button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверен?' }
         = button_to 'Оформить заказ', new_order_path, method: :get

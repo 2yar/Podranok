@@ -7,5 +7,5 @@ h1 = @category.name
     h6.price = product.price
     - if product.category.present? 
       = link_to product.category.name, product.category
-    = link_to 'Информацияw', product
+    = link_to 'Информация', product
     = button_to 'Добавить в корзину', line_items_path(product_id: product.id)
