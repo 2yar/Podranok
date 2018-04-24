@@ -1,0 +1,28 @@
+= form_for(@order) do |f| 
+  div class="form-group"
+    = f.label 'ФИО получателя'
+    = f.text_field :name, class: 'form-control'
+
+  div class="form-group"
+    = f.label 'Город доставки'
+    = f.text_area :address, class: 'form-control'
+
+  div class="form-group"
+    = f.label 'Адрес электронной почты'
+    = f.email_field  :email, class: 'form-control'
+
+  div class="form-group"
+    = f.label 'Мобильный телефон'
+    = f.telephone_field  :phone, class: 'form-control'
+
+  div class="field"
+    = f.label 'Выберите способ доставки'
+    = f.select :type_of_delivery, Order::TYPE_OF_DELIVERY, prompt: 'Способ доставки'
+
+  div class="field"
+    = f.label 'Выберите способ оплаты'
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Способ оплаты'
+
+  div class="actions"
+    = f.submit 'Подтвердить заказ'
+
