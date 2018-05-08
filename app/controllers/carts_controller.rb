@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
   before_action :params_cart, only: [:show, :destroy]
+  skip_before_action :authenticate_user!
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+  
   def create
     if @cart.save
       redirect_to @cart

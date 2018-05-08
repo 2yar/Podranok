@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_person, only: [:show, :edit, :destroy, :update]
-
+  
   def index
     @user = User.all
   end

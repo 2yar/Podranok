@@ -27,16 +27,20 @@ html
             input type="text" class="form-control" placeholder="Поиск"
           button type="submit" class="btn btn-default" Отправить
           <!-- логотип корзина -->
-          img href="адрес ссылки"src="https://png.icons8.com/ios/50/000000/shopping-cart.png" width="30" height="30" style="border: 1px solid #AAAEB4; margin-left: 630px;"
+          div style="margin-left: 485px;"
+            == render 'shared/basket' 
           <!-- логотип зарегаться -->
           img src="https://png.icons8.com/ios/50/000000/contacts.png" width="30" height="30" style="border: 1px solid #AAAEB4; margin-left: 10px;"
           - if user_signed_in? 
-            = link_to('Редактировать профиль', edit_user_registration_path) 
-            = link_to('Выйти', destroy_user_session_path, :method => :delete)        
+            div style="margin-left: 0px;"
+              = link_to('Редактировать профиль', edit_user_registration_path) 
+            div style="margin-left: 10px;"
+              = link_to('Выйти', destroy_user_session_path, :method => :delete)        
           - else 
-            = link_to('Зарегистрироваться', new_user_registration_path)
-            = link_to('Авторизоваться', new_user_session_path)
-
+            div style="margin-left: 0px;"
+              = link_to('Зарегистрироваться', new_user_registration_path)
+            div style="margin-left: 10px;"
+              = link_to('Авторизоваться', new_user_session_path)
     nav id="navigation"        
       nav style="border: 0.5px solid #AAAEB4; padding: 10px; background-color: #323200;"
         a[class="nav-link" id="nav1" style="margin-left: 2px; font-size: 20px;" href="http://localhost:3000/categories/2"] Каталог Товаров

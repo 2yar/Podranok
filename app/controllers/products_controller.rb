@@ -3,26 +3,21 @@ class ProductsController < ApplicationController
   before_action :check_admin, only: [:new, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  # GET /products
   def index
     @products = Product.all
   end
 
-  # GET /products/1
   def show; end
 
-  # GET /products/new
   def new
     @product = Product.new
     @сategory = Category.order(:name, :id)
   end
 
-  # GET /products/1/edit
   def edit
     @сategory = Category.order(:name, :id)
   end
 
-  # POST /products
   def create
     @product = Product.new(product_params)
 
@@ -35,7 +30,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -46,7 +40,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
   def destroy
     @product.destroy
     respond_to do |format|
@@ -60,12 +53,10 @@ class ProductsController < ApplicationController
     redirect_to root_path unless current_user.admin?
   end
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
     params.require(:product).permit(:name, :description, :price, :weight, :image, :category_id)
   end
