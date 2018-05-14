@@ -12,4 +12,7 @@ body
     div class="col-lg-10" style="margin-left: 407px;"
       div class="digg_pagination" 
         = will_paginate @products
-      
+  - if @products.blank? 
+    h4 Поиск не удался! Выбранного Вами товара не существует.
+    = params[:search]
+

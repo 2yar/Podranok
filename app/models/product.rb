@@ -8,6 +8,10 @@ class Product < ApplicationRecord
   before_destroy :ensure_not_referenced_by_any_line_item
   
   belongs_to :category
+  
+  def self.search(search)
+    where("name LIKE ? OR price LIKE ?", "%#{search}%", "%#{search}%")
+  end
 
   private
 

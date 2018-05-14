@@ -19,13 +19,15 @@ html
             img.image_tag = image_tag('youtube.png', height: '30', width: '30')
           a[style="margin-left: 10px;" href="https://twitter.com/"] 
             img.image_tag = image_tag('twitter.png', height: '30', width: '30')
-
+            
     div class="container"
       nav id="search_end_basket"
         form class="navbar-form"
-          div class="form-group"
-            input type="text" class="form-control" placeholder="Поиск"
-          button type="submit" class="btn btn-default" Отправить
+          div class="input-group"
+            = form_tag(products_path, method: "get", id: "search-form") do
+              = text_field_tag :search, params[:search], placeholder: "Поиск", class: 'form-control'
+              span class="input-group-btn"
+                = submit_tag "Отправить", class: 'btn btn-default'
           <!-- логотип корзина -->
           div style="margin-left: 475px;"
             == render 'shared/basket' 
@@ -41,6 +43,7 @@ html
               = link_to('Зарегистрироваться', new_user_registration_path)
             div style="margin-left: 10px;"
               = link_to('Авторизоваться', new_user_session_path)
+
     nav id="navigation"        
       nav style="border: 0.5px solid #AAAEB4; padding: 10px; background-color: #323200;"
         a[class="nav-link" id="nav1" style="margin-left: 2px; font-size: 20px;" href="http://localhost:3000/categories/2"] Каталог Товаров

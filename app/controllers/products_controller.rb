@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.paginate(page: params[:page], per_page: 8)
+    if params[:search]
+      @products = Product.search(params[:search]).order(:name, :price).paginate(page: params[:page], per_page: 4)
+    end
   end
 
   def show; end
