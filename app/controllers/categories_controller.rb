@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @products = Product.where(category_id: [@category.subtree_ids])
+    @products = Product.where(category_id: [@category.subtree_ids]).paginate(page: params[:page], per_page: 4)
   end
 
   def new

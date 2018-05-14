@@ -9,3 +9,6 @@ h1 = @category.name
       = link_to product.category.name, product.category
     = link_to 'Информация', product
     = button_to 'Добавить в корзину', line_items_path(product_id: product.id)
+div class="col-lg-10" style="margin-left: 392px;"
+      div class="digg_pagination" 
+        = will_paginate @products
