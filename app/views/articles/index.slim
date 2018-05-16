@@ -1,10 +1,11 @@
-table
-  tbody
-    - @articles.each do |article| 
-      div
-        br id="article_name"
+tbody
+  - @articles.each do |article| 
+    div
+      div id="articlename"
+        br
           = article.name
-        br
-          = article.image_url 
-        br
+      br
+        img.image_tag = image_tag article.image.url(:medium) 
+      br
           = article.description 
+
