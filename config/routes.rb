@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   root to: "products#index"
 
   get '/contact' => 'pages#contact' 

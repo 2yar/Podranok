@@ -1,0 +1,10 @@
+table
+  tbody
+    - @articles.each do |article| 
+      div
+        br id="article_name"
+          = article.name
+        br
+          = article.image_url 
+        br
+          = article.description 
