@@ -26,3 +26,4 @@ config/secrets.yml
 #Ignore image file
 public/system/products/images
 public/system/articles/images
+public/system/categories/images
