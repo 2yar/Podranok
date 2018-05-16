@@ -21,6 +21,10 @@ body
       div
         br
           = @product.price
+      div
+        h6 Поделиться:
+        = social_share_button_tag(@product.name, :allow_sites => %w(twitter)) 
+        = social_share_button_tag('Share to Facebook', :url => product_path(@product), desc: @product.name, :allow_sites => %w(facebook)) 
     div class="col-sm-12" 
       div
         h4 = @product.description

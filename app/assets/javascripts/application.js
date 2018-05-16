@@ -16,3 +16,4 @@
 //= require turbolinks
 //= require_tree .
 //= require toastr
+//= require social-share-button
