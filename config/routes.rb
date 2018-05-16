@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  resources :articles
   root to: "products#index"
 
   get '/contact' => 'pages#contact' 
   get '/about_company' => 'pages#about_company' 
-  get '/info' => 'pages#info' 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -14,4 +12,5 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create]
   resources :orders
   resources :categories
+  resources :articles, only: [:index]
 end

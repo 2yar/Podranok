@@ -6,7 +6,4 @@ class PagesController < ApplicationController
 
   def about_company
   end
-
-  def info
-  end
 end
