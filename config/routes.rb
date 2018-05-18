@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about_company' => 'pages#about_company' 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount PointlessFeedback::Engine, :at => '/feedback'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :users, :products
