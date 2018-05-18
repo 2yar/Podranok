@@ -48,6 +48,7 @@ gem 'slim', '~> 3.0', '>= 3.0.7'
 gem 'will_paginate', '~> 3.1.0'
 gem 'omniauth-facebook'
 gem 'social-share-button'
+gem 'pointless_feedback'
 
 group :development, :test do
   gem 'byebug', platform: :mri
