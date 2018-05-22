@@ -1,6 +1,6 @@
 body{
-  height: 1000px;
-  margin: 0px;
+  height: 100%;
+  margin: 0px; 
 }
 
 #topborder {
@@ -40,6 +40,7 @@ body{
   border: 0.5px solid #AAAEB4; 
   padding: 20px; 
   background-color: #272822;
+  margin: 0 -10px;
 }
 
 .submenu {
@@ -87,6 +88,9 @@ body{
 #bottom {
   border: 0.5px solid #AAAEB4;
   background-color: #E8EAEC;
-  padding: 40px;
   margin: 0 -10px;
+}
+
+#iconbottom {
+  margin: 40px;
 }
