@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article успешно создана.' }
+        format.html { redirect_to @article, notice: 'Статья успешно создана.' }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article успешно обновлена.' }
+        format.html { redirect_to @article, notice: 'Статья успешно обновлена.' }
       else
         format.html { render :edit }
       end
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article успешно удалена.' }
+      format.html { redirect_to articles_url, notice: 'Статья успешно удалена.' }
     end
   end
 
