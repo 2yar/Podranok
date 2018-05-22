@@ -1,0 +1,15 @@
+= form_for @message do |f|
+  div class="form-group"
+    = f.label 'Имя' 
+    = f.text_field :name, class: 'form-control'
+
+  div class="form-group"
+    = f.label 'Адрес электронной почты'
+    = f.text_field :email_address, class: 'form-control' 
+
+  div class="form-group"
+    = f.label 'Опишите проблему'
+    = f.text_area :description, class: 'form-control' 
+
+  div class="actions"
+    = f.submit 'Отправить' 
