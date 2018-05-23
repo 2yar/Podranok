@@ -1,0 +1,3 @@
+<% Category.roots.each do |category| %> 
+  <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %></td>
+<% end %>

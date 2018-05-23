@@ -1,0 +1,87 @@
+doctype html
+html
+  head
+    title Podranok
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    link rel="stylesheet" type="text/css" href="style.scss"
+    = csrf_meta_tags
+
+  body 
+    nav id="topborder"
+      nav class="row"
+        nav class="col-sm-3"
+          nav id="search"
+            form class="navbar-form"
+              div class="input-group" id="topul"
+                = form_tag(products_path, method: "get", id: "search-form") do
+                  = text_field_tag :search, params[:search], placeholder: "Поиск", class: 'form-control'
+                  span class="input-group-btn"
+                    = submit_tag "Отправить", class: 'btn btn-default'
+        nav class="col-sm-3" 
+          <!-- логотип корзина -->
+          div id="basket"
+            == render 'shared/basket' 
+        nav class="col-sm-3"
+          ul id="topul"
+            div id="icon"
+              a[href="https://www.facebook.com/groups/ZhittyaMislivtsiv/"] 
+                img.image_tag = image_tag('Facebook.png', height: '25', width: '25')
+            div id="icon"
+              a[href="https://www.youtube.com/channel/UC9pxec4wq-yMRjjXi9IvROQ?view_as=subscriber"] 
+                img.image_tag = image_tag('Youtube.png', height: '25', width: '25')
+            div id="icon"
+              a[href="https://twitter.com/"] 
+                img.image_tag = image_tag('Twitter.png', height: '25', width: '25')
+            div id="icon"
+              a[href="https://twitter.com/"] 
+                img.image_tag = image_tag('Github.png', height: '25', width: '25')
+        nav class="col-sm-2" id="user"
+          <!-- логотип зарегаться -->
+          - if user_signed_in? 
+            div style="margin-left: 0px;"
+              = link_to('Редактировать профиль', edit_user_registration_path) 
+            div style="margin-left: 10px;"
+              = link_to('Выйти', destroy_user_session_path, :method => :delete)        
+          - else 
+            div style="margin-left: 0px;"
+              = link_to('Зарегистрироваться', new_user_registration_path)
+            div style="margin-left: 10px;"
+              = link_to('Авторизоваться', new_user_session_path)
+
+  nav id="navigation"        
+    nav id="top2"
+      a[class="nav-link" style="margin-left: -10px; font-size: 20px;" href="http://localhost:3000/categories/2"] Каталог Товаров
+      a[class="nav-link" style="font-size: 15px; padding-left: 300px;" href="http://localhost:3000/"] Главная
+      a[class="nav-link" style="font-size: 15px; padding-left: 40px;" href="http://localhost:3000/about_company"] О компании 
+      a[class="nav-link" style="font-size: 15px; padding-left: 40px;" href="http://localhost:3000/contact"] Контакты
+      a[class="nav-link" style="font-size: 15px; padding-left: 40px;" href="http://localhost:3000/articles"] Статьи
+
+  nav class="row"
+    div class="col-sm-2"
+      == render 'shared/submenu'
+    div class="col-sm-10" id="productsindex_end_yield"
+      = yield
+    nav class="row"
+      div class="col-sm-12" style="margin-left: 2px; margin-top: 10px;"
+        == render 'shared/category'
+
+  nav id="bottom"
+    nav class="text-center"
+      ul
+        div id="iconbottom"
+          a[href="https://www.facebook.com/groups/ZhittyaMislivtsiv/"] 
+            img.image_tag = image_tag('Facebook.png', height: '25', width: '25')
+        div id="iconbottom"
+          a[href="https://www.youtube.com/channel/UC9pxec4wq-yMRjjXi9IvROQ?view_as=subscriber"] 
+            img.image_tag = image_tag('Youtube.png', height: '25', width: '25')
+        div id="iconbottom"
+          a[href="https://twitter.com/"] 
+            img.image_tag = image_tag('Twitter.png', height: '25', width: '25')
+        div id="iconbottom"
+          a[href="https://twitter.com/"] 
+            img.image_tag = image_tag('Github.png', height: '25', width: '25') 
+
+
+

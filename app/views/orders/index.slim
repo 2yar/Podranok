@@ -1,0 +1,26 @@
+p id="notice" 
+    = notice 
+
+table
+  thead
+    tr
+      th ФИО получателя
+      th Город доставки
+      th Адрес электронной почты
+      th Мобильный телефон
+      th способ оплаты
+
+  tbody
+    - @orders.each do |order| 
+      tr
+        td = order.name 
+        td = order.address 
+        td = order.email 
+        td = order.phone
+        td = order.pay_type 
+        td = link_to 'Show', order
+        td = link_to 'Edit', edit_order_path(order)
+        td = link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+= link_to 'New Order'

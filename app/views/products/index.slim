@@ -1,0 +1,17 @@
+body
+  nav class="row"
+    div class="col-sm-12"
+      - @products.each do |product|
+        div class="col-lg-3"
+          nav id="productsindex"
+            h6.name = product.name
+            img.image_tag = image_tag product.image.url(:medium)
+            h6.price = product.price
+            = link_to 'Информация', product, :class=>"btn btn-outline-secondary"
+            = button_to 'Добавить в корзину', line_items_path(product_id: product.id), :class=>"btn btn-outline-secondary"
+    div class="col-lg-10" style="margin-left: 407px;"
+      div class="digg_pagination" 
+        = will_paginate @products
+  - if @products.blank? 
+    h4 Поиск не удался! Выбранного Вами товара не существует.
+    = params[:search]

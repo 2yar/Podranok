@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180201113033) do
+ActiveRecord::Schema.define(version: 20180518103654) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image_url"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,9 +31,13 @@ ActiveRecord::Schema.define(version: 20180201113033) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "ancestry"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -45,6 +61,15 @@ ActiveRecord::Schema.define(version: 20180201113033) do
     t.string   "type_of_delivery"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "pointless_feedback_messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email_address"
+    t.string   "topic"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", force: :cascade do |t|
@@ -79,6 +104,10 @@ ActiveRecord::Schema.define(version: 20180201113033) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.text     "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

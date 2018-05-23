@@ -1,7 +1,6 @@
 class LineItemsController < ApplicationController
-  include CurrentCart
-  before_action :set_cart, only: [:create]
-
+  skip_before_action :authenticate_user!, only: [:create]
+  
   def create
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)

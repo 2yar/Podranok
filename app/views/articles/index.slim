@@ -1,0 +1,12 @@
+tbody
+  - @articles.each do |article| 
+    div
+      div id="articlename"
+        br
+          = article.name
+      br
+        img.image_tag = image_tag article.image.url(:medium) 
+      br
+          = article.description
+  div class="digg_pagination" 
+        = will_paginate @article

@@ -1,0 +1,16 @@
+= form_for @category do |f|
+  div class="form_group"
+    = f.label 'Названия' 
+    = f.text_field :name, class: 'form-control'
+
+  div class="form_group"
+    = f.label 'Категория родитель' 
+    = f.collection_select :parent_id, @parent_categories, :id, :name, { include_blank: true }
+
+  div class="field"
+    = f.label :image
+    = f.file_field :image
+
+  div class="form_group"
+    = f.submit t('.submit', action: @category.new_record? ? 'Создать' : 'Изменить')
+ 

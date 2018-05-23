@@ -1,0 +1,18 @@
+p id="notice"
+    = notice
+
+p
+  strong Name:
+  = @order.name
+
+  strong Address:
+    = @order.address
+
+  strong Email:
+    = @order.email
+
+  strong Pay type:
+    = @order.pay_type
+
+= link_to 'Edit', edit_order_path(@order)
+= link_to 'Back', orders_path

@@ -2,5 +2,4 @@ ru:
   activerecord:
     category:
       parent_id: 'Категория родитель'
-      submit: 'создать'
-      
+      submit: 'Cоздать'

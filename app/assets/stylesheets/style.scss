@@ -1,0 +1,95 @@
+body{
+  height: 100%;
+  margin: 0px; 
+}
+
+#topborder {
+  border: 0.5px solid #AAAEB4; 
+  background-color: #E8EAEE;
+  margin: 0 -10px;
+}
+
+#search {
+  
+}
+
+#basket {
+  position: relative;
+  top: 10px;
+  margin-left: 100px;
+
+}
+
+#icon {
+  margin-right: 27px;
+  padding-left: 2px;
+}
+
+#user {
+  top: 17px;
+  margin-left: 50px;
+}
+
+#topul {
+  -webkit-margin-before: 15px;
+  -webkit-margin-after: 15px;
+  -webkit-margin-start: 0px;
+}
+
+#top2 {
+  border: 0.5px solid #AAAEB4; 
+  padding: 20px; 
+  background-color: #272822;
+  margin: 0 -10px;
+}
+
+.submenu {
+  border: 0.1px solid #AAAEB4;
+  border-style:solid; border-top-width: 0px;
+  width: 170px;
+  text-align: center;
+  padding: 10px;
+}
+
+#productsindex_end_yield {
+  margin-left: -30px;
+}
+
+#productsindex {
+  border: 0.5px solid #AAAEB4;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+#category {
+  border: 0.5px solid #AAAEB4;
+  text-align: center;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50px;
+  left: 400px;
+  width: 600px;
+  padding: 10px;
+}
+
+#categories_show {
+  border: 0.5px solid #AAAEB4;
+  text-align: center;
+  padding: 10px;
+}
+
+#bottom {
+  border: 0.5px solid #AAAEB4;
+  background-color: #E8EAEC;
+  margin: 0 -10px;
+}
+
+#iconbottom {
+  margin: 40px;
+}

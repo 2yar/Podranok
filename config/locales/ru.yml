@@ -6,3 +6,6 @@ ru:
     form:
       submit:
         '%{action} категорию'
+  will_paginate:
+    previous_label: '&larr; Назад'
+    next_label: 'Вперёд &rarr;'

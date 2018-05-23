@@ -1,0 +1,37 @@
+<button type="button" data-toggle="modal" data-target="#myModal">
+  <img href="Адрес ссылки"src="https://png.icons8.com/ios/50/000000/shopping-cart.png" width="30" height="30">
+  Корзина -
+  <%= number_to_currency(@cart.total_price) %>
+</button>
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog" style="border: none;">
+    <div class="modal-content">
+      <div class="modal-header" style="border: none;">
+        <h5 class="modal-title" id="exampleModalLabel">Моя корзина</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="border: none;">
+        <table>
+          <% @cart.line_items.each do |item| %>
+            <tr>
+              <td><%= item.quantity %>&times;</td>
+              <td><%= item.product.name %></td>
+              <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+            </tr>
+          <% end %>
+          <tr class="total_line" style="border: none;">
+            <td colspan="4">Total</td>
+            <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer" style="border: none;">    
+        <button><%= link_to 'Оформить заказ', new_order_path, method: :get %></button>
+        <button><%= link_to 'Вернуться к покупкам', products_path, method: :get %></button>
+        <button><%= link_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверен(а)?' } %></button>
+      </div>
+    </div>
+  </div>
+</div>

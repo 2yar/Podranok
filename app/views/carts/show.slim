@@ -1,0 +1,14 @@
+div class="modal-body"
+  table
+    - @cart.line_items.each do |item|
+      tr
+        td = item.quantity
+        td = item.product.name 
+        td class="item_price" = number_to_currency(item.total_price)
+    tr class="total_line"
+            td colspan="2" Total
+            td class="total_cell" = number_to_currency(@cart.total_price)
+div       
+  = button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Вы уверены?' }
+  = button_to 'Оформить заказ', new_order_path, method: :get
+  = button_to 'Вернуться к покупкам', products_path, method: :get

@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @products = Product.where(category_id: [@category.subtree_ids])
+    @products = Product.where(category_id: [@category.subtree_ids]).paginate(page: params[:page], per_page: 4)
   end
 
   def new
@@ -54,6 +54,6 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :parent_id)
+    params.require(:category).permit(:name, :parent_id, :image)
   end
 end

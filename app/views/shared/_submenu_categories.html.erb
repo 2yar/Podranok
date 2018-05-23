@@ -1,0 +1,5 @@
+<% categories.each do |category, children| %>
+  <nav class="submenu">
+    <%= link_to category.name, category, class: "nav-link #{'active' if current_page?(category_path(category)) || @product.present? && @product.category == category}" %>
+  </nav>
+<% end %>
