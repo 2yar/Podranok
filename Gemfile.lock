@@ -185,7 +185,7 @@ GEM
     parallel (1.12.1)
     parser (2.5.0.4)
       ast (~> 2.4.0)
-    pg (1.0.0)
+    pg (0.21.0)
     pointless_feedback (4.0.5)
       rails (>= 4.0)
       typhoeus (~> 0.7, >= 0.7.3)
@@ -343,7 +343,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   omniauth-facebook
   paperclip
-  pg
+  pg (~> 0.21)
   pointless_feedback
   puma (~> 3.0)
   rails (~> 5.0.6)
