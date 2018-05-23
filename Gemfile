@@ -39,7 +39,7 @@ gem 'toastr-rails'
 gem 'dotenv-rails'
 gem 'rails_admin'
 gem "therubyracer"
-gem 'less-rails'
+gem 'less-rails', '~> 3.0.0'
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'glyphicons-rails'
