@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :check_admin, only: [:new, :edit, :update, :destroy]
- 
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 2)
   end
 
   def new
@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Статья успешно создана.' }
+        format.html { redirect_to articles_url, notice: 'Статья успешно создана.' }
       else
         format.html { render :new }
       end
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Статья успешно обновлена.' }
+        format.html { redirect_to @articles, notice: 'Статья успешно обновлена.' }
       else
         format.html { render :edit }
       end

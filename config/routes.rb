@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create]
   resources :orders
   resources :categories
-  resources :articles, only: [:index]
+  resources :articles, only: [:index, :new, :create]
 end

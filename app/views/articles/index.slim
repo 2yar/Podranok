@@ -7,5 +7,6 @@ tbody
       br
         img.image_tag = image_tag article.image.url(:medium) 
       br
-          = article.description 
-
+          = article.description
+  div class="digg_pagination" 
+        = will_paginate @article
