@@ -1,6 +1,6 @@
 body
   nav class="row"
-    div class="col-sm-12"
+    div class="col-sm-10"
       - @products.each do |product|
         div class="col-lg-3"
           nav id="productsindex"
@@ -9,7 +9,7 @@ body
             h6.price = product.price
             = link_to 'Информация', product, :class=>"btn btn-outline-secondary"
             = button_to 'Добавить в корзину', line_items_path(product_id: product.id), :class=>"btn btn-outline-secondary"
-    div class="col-lg-10" style="margin-left: 407px;"
+    div class="col-lg-10" style="margin-left: 350px;"
       div class="digg_pagination" 
         = will_paginate @products
   - if @products.blank? 
