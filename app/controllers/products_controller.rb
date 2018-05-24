@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @products = Product.paginate(page: params[:page], per_page: 8)
+    @products = Product.paginate(page: params[:page], per_page: 6)
     if params[:search]
       @products = Product.search(params[:search]).order(:name, :price).paginate(page: params[:page], per_page: 4)
     end

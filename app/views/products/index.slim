@@ -2,7 +2,7 @@ body
   nav class="row"
     div class="col-sm-18"
       - @products.each do |product|
-        div class="col-lg-3"
+        div class="col-lg-4"
           nav id="productsindex"
             h6.name = product.name
             img.image_tag = image_tag product.image.url(:medium)
