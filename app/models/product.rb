@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   belongs_to :category
   
   def self.search(search)
-    where("cast(name as text) LIKE ? OR price LIKE ?", "%#{search}%", "%#{search}%")
+    where("cast(name as text) LIKE ? OR cast(price as text) LIKE ?", "%#{search}%", "%#{search}%")
   end
 
   private
