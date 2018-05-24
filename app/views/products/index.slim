@@ -9,7 +9,7 @@ body
             h6.price = product.price
             = link_to 'Информация', product, :class=>"btn btn-outline-secondary"
             = button_to 'Добавить в корзину', line_items_path(product_id: product.id), :class=>"btn btn-outline-secondary"
-    div class="col-lg-10" style="margin-left: 350px;"
+    div class="col-lg-10" style="margin-left: 460px;"
       div class="digg_pagination" 
         = will_paginate @products
   - if @products.blank? 
