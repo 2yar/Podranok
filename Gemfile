@@ -52,6 +52,8 @@ gem 'pointless_feedback'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :production do
