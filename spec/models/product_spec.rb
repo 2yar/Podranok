@@ -15,35 +15,43 @@ RSpec.describe Product, type: :model do
 
   describe "product search by price and name" do
     before(:each) do
-      @p1 = Product.create(name: "Acura", price: 100, category_id: 1)
-      @p2 = Product.create(name: "BMV", price: 50, category_id: 2)
-      @p3 = Product.create(name: "Ferrari", price: 150, category_id: 3)
+      @p1 = FactoryBot.create(:product)
+      @p2 = FactoryBot.create(:product, name: "Fiat", price: 555)
     end
-    context "when name 'Fiat'" do
-      it "returns an empty array" do
-        search_hash = { keyword: "Fiat" }
-        expect(Product.search(search_hash)).to be_empty
+
+    context "when name 'Acura'" do
+      it "returns the p1" do
+        expect(Product.search("Acura")).to match_array([@p1])
       end
     end
- 
+
+    context "when name 'Acura'" do
+      it "returns the p2" do
+        expect(Product.search("Fiat")).to match_array([@p2])
+      end
+    end
+
+    context "when price '100'" do
+      it "returns the p1" do
+        expect(Product.search(100)).to match_array([@p1])
+      end
+    end
+
+    context "when price '555'" do
+      it "returns the p2" do
+        expect(Product.search(555)).to match_array([@p2])
+      end
+    end
+
     context "when price '10'" do
       it "returns an empty array" do
-        search_hash = { price: 10 }
-        expect(Product.search(search_hash)).to be_empty
+        expect(Product.search(33)).to be_empty
       end
     end
- 
-    context "when name 'Acura'" do
-      it "returns the product1" do
-        search_hash = { keyword: "Acura" }
-        expect(Product.search(search_hash)).to match_array([@product1])
-      end
-    end
- 
-    context "when price '150'" do
-      it "returns the product3" do
-        search_hash = { price: 150 }
-        expect(Product.search(search_hash)).to match_array([@product3])
+
+    context "when name 'Ferrari'" do
+      it "returns an empty array" do
+        expect(Product.search("Ferrari")).to be_empty
       end
     end
   end
@@ -63,4 +71,3 @@ RSpec.describe Product, type: :model do
     end
   end
 end
-

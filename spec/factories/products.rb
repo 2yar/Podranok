@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :product do
-    name "test"
-    price 9.99
+    name "Acura"
+    price 100
     category
   end
 end
