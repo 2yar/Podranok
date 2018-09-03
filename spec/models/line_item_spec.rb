@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe LineItem, type: :model do
   let(:cart) { create :cart }
   let(:product) { create :product, price: 9 }
-  let(:line_item) { create :line_item, cart: cart, product: product }
+  let(:line_item) { create :line_item, quantity: 2, cart: cart, product: product }
 
   describe 'ActiveRecord associations' do
     it { is_expected.to belong_to :order }
