@@ -9,9 +9,9 @@ class ProductsController < ApplicationController
       @products = Product.search(params[:search]).order(:name, :price).paginate(page: params[:page], per_page: 4)
     end
   end
-
+  
   def show; end
-
+ 
   def new
     @product = Product.new
     @сategory = Category.order(:name, :id)
