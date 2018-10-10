@@ -56,6 +56,7 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'byebug'
+  gem 'rails-controller-testing'
 end
 
 group :production do
